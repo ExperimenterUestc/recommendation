@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Manage
+{% endblock %}
+
+{% block h1 %}
+    <a href="#" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">{{ author.nickname }}</a>
+{% endblock %}
+
+{% block content %}
+
+    <table class="table table-striped">
+        <caption>文章管理</caption>
+        <thead>
+            <tr>
+                <th>名称</th>
+                <th>发布时间</th>
+                <th>内容摘要</th>
+                <th>管理</th>
+            </tr>
+        </thead>
+        <tbody>
+                    {% for article in article_list %}
+                        <tr>
+                            <th>{{ article.name }}</th>
+                            <th>{{ article.mod_date }}</th>
+                            <th>{{ article.text|slice:'50' }}</th>
+                            <form method="post" id={{ article.id }}>
+                                {% csrf_token %}
+                                <input type="hidden" name="article_id" value={{ article.id }}>
+                                <th><button onclick="javascript:alert('是否确认删除?')" value={{ article.id }} type="button submit" class="btn btn-danger">删除</button></th>
+                            </form>
+                    </tr>
+                    {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

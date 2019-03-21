@@ -1,0 +1,165 @@
+ <!DOCTYPE html>
+<html crossriderapp2258="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<!-- title -->
+		<title>{% block title %}{% endblock %}</title>
+
+		<!-- meta -->
+		<meta charset="UTF-8">
+
+		<!-- links -->
+		<link rel="stylesheet" type="text/css" media="screen" href="/static/css/style.css">
+
+		<!-- scripts -->
+    </head>
+    <body class="home blog">
+     
+    	<!-- header -->
+    	<header>
+    		<div id="light">
+	    		<div class="container_16">
+	    			<h1 class="grid_8">
+                        {% block h1 %}
+                            <a href="#">Your Name</a>
+                        {% endblock %}
+
+                    </h1>
+                    {% if request.user == author %}
+                        <nav class="grid_8">
+                                <ul id="menu-menu" class="menu"><li><a href= {% url "home" %}> Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Contact</a></li>
+                                </ul>
+                        </nav>
+                    {% else %}
+                                <nav class="grid_8">
+                                正使用游客身份访问
+                                 <a href={%   url "loginurl" %}>登录</a>
+                                </ul>
+                        </nav>
+                    {% endif %}
+	    		</div>
+			</div>
+    	</header>
+
+		<!-- wrapper -->
+		<div id="wrapper">
+			<div class="container_16">
+				<section id="posts" class="prefix_1 grid_9">
+                {% block content %}{% endblock %}
+
+
+
+    		<div class="navigation">
+                <div class="alignleft"><a href="#">Older Posts</a></div></div>
+
+				</section>
+
+				<aside class="prefix_1 grid_5">
+					
+					
+					<!-- search -->
+                    <form action="#" method="get">
+						<input id="search" name="s" value="I'm searching for..." type="text">
+					 </form>
+            
+
+					<!-- Categories-->
+					<h4>Categories</h4>
+					<ul class="categories">
+							<li><a href="#" >design</a></li>
+							<li><a href="#" >inspiration</a></li>
+							<li><a href="#" >tutorials</a></li>
+							<li><a href="#" >uncategorized</a></li>
+							<li><a href="#" >updates</a></li>
+							<li><a href="#" >web</a></li>
+					</ul>
+					<div class="clear"></div>
+					<hr>
+
+
+					<!-- RSS / Twitter -->/
+					<section id="rss">
+						<p><a href="#"><img src="/static/images/socials/rss_32.png" ></a></p>
+						<p><a href="#">SUBSCRIBE</a><br><strong>2021</strong> readers</p>
+						<p class="rss_sub_links"><a href="#">rss feed</a> | <a href="#">email updates</a></p>
+					</section>
+					<section id="twitter">
+						<p><a href="#"><img src="/static/images/socials/twitter_32.png" ></a></p>
+						<p><a href="#">FOLLOW ME</a><br><strong>4386</strong> followers</p>
+					</section>
+					<hr>
+
+
+					<!-- Comments -->
+					<h4>Recent Comments</h4>
+					<ul class="recent_comments"><li>Perfekt style here too<br><a href="#">Timo</a></li><li>I like this Theme.
+I think i will use it for my n...<br><a href="#">Timo</a></li><li>Good work. Think I'll use this for my blog.<br><a href="#">Tom Wayson</a></li><li>Beautiful themes.... i like it... :D<br><a href="#">Amri Karisma</a></li><li>Yes,
+it works perfectly! :)<br><a href="#">Simone D'Amico</a></li></ul>					<div class="clear"></div>
+					<hr>
+
+
+					<!-- Blogroll -->
+					<h4>Blogroll</h4>
+					<ul class="blogroll">
+						<li><a href="#">Documentation</a></li>
+						<li><a href="#">Plugins</a></li>
+						<li><a href="#">Suggest Ideas</a></li>
+						<li><a href="#">Support Forum</a></li>
+						<li><a href="#">Themes</a></li>
+						<li><a href="#">WordPress Blog</a></li>
+						<li><a href="#">WordPress Planet</a></li>
+					</ul>
+                    <hr>
+
+                </aside>
+
+
+            </div>
+        </div>
+
+		<!-- footer -->
+		<footer>
+			<section id="footer_content">
+				<div class="container_12">
+					<div id="inspiration" class="grid_4">
+						<h4>Find Inspiration</h4>
+
+						<a href="#" ><img src="/static/images/user1/7325332956_178b16f0b2_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/7139484443_59ba355a67_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/6991926526_bc2b9af686_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/6991884950_a8a9d7c6ea_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/6990048348_0202f723df_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/7136013721_cbcca8c067_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/7135992035_b42e018bef_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/6937250572_8ab4f0a557_s.jpg" ></a>
+						<a href="#" ><img src="/static/images/user1/6933739362_fcf621565a_s.jpg" ></a>
+					</div>
+					<div id="twitter_feed" class="grid_4">
+						<h4>Twitter Feed</h4>
+
+						<ul class="twitter_list"><li><a href="#">@ognjanovic</a> dogovoreno :)</li><li><a href="#">@ognjanovic</a> a zasto ne bih?</li><li>enjoying delicious cup of <a href="#">@Nespresso</a> Indriya cc <a href="#">@ognjanovic</a> <a href="#">@gonzodesign</a></li><li>Pijana noć <a href="#">#Kbs6luXM</a> via <a href="#">@ognjanovic</a></li><li>Sjajan tekst na juznim vestima - Vrelina <a href="#">#MEWI7znr</a> via <a href="#">@juznevesti</a></li></ul>
+						<p class="followme"><a href="#">follow me on twitter</a></p>
+					</div>
+					<div id="socials" class="grid_4">
+						<h4>Find me elsewhere</h4>
+
+						<ul class="socials"><li><a href="#"><img src="images/feedburner_32.png" ></a></li><li><a href="#"><img src="images/twitter_32.png" ></a></li><li><a href="#"><img src="images/flickr_32.png" ></a></li><li><a href="#"><img src="images/deviantart_32.png" ></a></li><li><a href="#"><img src="images/facebook_32.png" ></a></li><li><a href="#"><img src="images/skype_32.png" ></a></li></ul>						<div class="clear"></div>
+
+						<h5>Stay Updated</h5>
+
+                						<p class="stayupdated"><a href="#"><img src="images/rss_32.png" ></a> <a href="#">rss feed updates</a></p>
+                        <p class="stayupdated"><a href="#"><img src="images/email_32.png" ></a> <a href="#">email updates</a></p>
+
+					</div>
+					<div class="clear"></div>
+				</div>
+			</section>
+			<section id="powered">
+				<div class="container_12">
+					<p class="grid_10">© 2012  free html5 templates | Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+					<p class="grid_2"><a class="top" href="#">▲ Back to top</a></p>
+				</div>
+			</section>
+		</footer>
+</body></html>

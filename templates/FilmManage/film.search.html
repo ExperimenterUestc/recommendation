@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Search Film</title>
+<!-- Custom Theme files -->
+<link href="/static/css/style_search.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Flat Search Box Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--Google Fonts-->
+</head>
+<body>
+<!--search start here-->
+<div class="search">
+	<i> </i>
+	<div class="s-bar">
+	   <form method="POST">
+           {% csrf_token %}
+		<input type="text"  name="name1" value="Search Template" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Film';}">
+		<input type="submit"  value="Search"/>
+	  </form>
+	</div>
+	<p>Popular searches: <a href="#">Toy Story (1995),</a> <a href="#"> Assassins (1995) </a></p>
+</div>
+<!--search end here-->	
+<div class="copyright">
+	 <p>welcome to search film</p>
+</div>	
+</body>
+</html>

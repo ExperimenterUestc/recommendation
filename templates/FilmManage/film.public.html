@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Public
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-header">
+            <h1>电影一览</h1>
+    </div>
+
+    {% for film in film_list %}
+{#        <h3>{{ film.name }}</h3>#}
+{#            <div class="block">#}
+{#                <p>{{ film|slice:'50' }}</p>#}
+
+
+          <div style="width:450px; height: 500px; float:left; display:inline">
+          <div class="jumbotron">
+
+              <p>{{ film.title }}</p>
+              {% if film.imdbId|length == 7 %}
+              <a href='https://www.imdb.com/title/tt{{ film.imdbId }}/?ref_=inth_ov_tt'>
+              {% endif %}
+              {% if film.imdbId|length == 6 %}
+              <a href='https://www.imdb.com/title/tt0{{ film.imdbId }}/?ref_=inth_ov_tt'>
+              {% endif %}
+              {% if film.imdbId|length == 5 %}
+              <a href='https://www.imdb.com/title/tt00{{ film.imdbId }}/?ref_=inth_ov_tt'>
+              {% endif %}
+              <p><img src="/static/images/temp/{{ film.movieid }}.jpg" height="268" width="182"></p>
+              </a>
+              <span class="genres">{{ film.genres }}</span>
+          </div>
+          </div>
+
+
+
+    {% endfor %}
+
+
+
+
+{% endblock %}

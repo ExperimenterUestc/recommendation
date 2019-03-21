@@ -1,0 +1,67 @@
+{% extends "common/User_template_1.html" %}
+
+{% block title %}
+    Read
+{% endblock %}
+
+{% block h1 %}
+    <a href="#">{{ author.nickname }}</a>
+{% endblock %}
+
+{% block content %}
+    {% for article in rank_list %}
+        
+        <article>
+            <h2><a href="#" >{{ article.name }}</a></h2>
+            <p class="info">{{ article.mod_date }}  |  by <span><a href="#"  rel="author">{{ article.author.nickname }}</a></span>  |  <a href="#"  rel="category">updates</a></p>
+            <div class="time"><p><font size="6" >{{ article.mod_date.month}}</font> <br><font size="5" >{{ article.mod_date.day }}</font></p></div>
+            {% for l in rank_film %}
+                {% ifequal article.name l.1%}
+                <p><img src="/static/images/temp/{{l.0}}.jpg" height="268" width="182"></p>
+                <font size="3">{{ l.2 }}</font>
+                    <br>
+                {% endifequal %}
+            {% endfor %}
+            <style>
+.divcss5{ border:1px solid #00F; height:120px; width:200px;word-wrap:break-word; overflow: auto}
+</style>
+            <div class=".divcss5">
+                <font size="4">
+                    <br>
+                评分：{{ article.text }}
+                    </font>
+            </div>
+        <div class="clear"></div>
+        <p class="bottom_info"><a href="#" >1 Comment »</a></p>
+        </article>
+    {% endfor %}
+{% endblock %}
+
+
+
+
+
+{##}
+{#					<article>#}
+{#						<h2><a href="#" >Mhmm Coffee Break!</a></h2>#}
+{#						<p class="info">December 27th, 2010  |  by <span><a href="#"  rel="author">admin</a></span>  |  <a href="#"  rel="category">updates</a></p>#}
+{#						<div class="time"><p>Dec<br><span>27</span></p></div>#}
+{#						#}
+{#                        <p><img src="images/caffee-break-final-510x150.jpg" height="150" width="510"></p>#}
+{#						#}
+{#        				<div class="entry">#}
+{#        					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.#}
+{#							 Praesent sed turpis turpis, eu mattis sem. Sed tristique porta cursus. #}
+{#							Class aptent taciti sociosqu ad litora torquent per conubia nostra, per #}
+{#							inceptos himenaeos. Donec vestibulum, enim nec condimentum ullamcorper, #}
+{#							magna ipsum sagittis sapien, vel egestas lorem mi et neque. Nulla #}
+{#							ultrices felis eget arcu vulputate at hendrerit augue euismod. Nulla at #}
+{#							velit ac turpis sollicitudin consequat. Etiam leo tortor, faucibus a #}
+{#							consectetur et, consequat venenatis velit. Curabitur tempus sem vitae #}
+{#							elit gravida a suscipit leo placerat.</p>#}
+{#							<p> <a href="#" class="more-link">Read full story</a></p>#}
+{#        				</div>#}
+{#                        <div class="clear"></div>#}
+{#						<p class="bottom_info"><a href="#" >1 Comment »</a></p>#}
+{#					</article>#}
+{#                    #}

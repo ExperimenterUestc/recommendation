@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Write
+{% endblock %}
+
+{% block content %}
+    The followings are the films you want to find:<br>
+    {% for i in ans %}
+        {{ i }}<br>
+    {% endfor %}
+    <form class="form-horizontal" role="form" action={% url "blog_write" %} method="POST" >
+    {% csrf_token %}
+
+        {% for item in form_next %}
+            <div class="form-group">
+                <label class="control-label col-md-1">{{item.label}}</label>
+                <div class="col-md-6">
+                    {{item}}
+                </div>
+                <div class="col-md-offset-1 col-md-5">
+                    {{item.errors}}
+                </div>
+            </div>
+        {% endfor %}
+
+
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-10">
+                <button type="submit" class="btn btn-danger btn-sm">新 增</button>
+            <div>
+        </div>
+
+    </form>
+
+{% endblock %}
